@@ -1,5 +1,5 @@
 services:
-  postgres:
+  avengers-db:
     image: 'postgres:latest'
     environment:
       - 'POSTGRES_DB=postgres'
@@ -7,3 +7,14 @@ services:
       - 'POSTGRES_USER=postgres'
     ports:
       - '5432:5432'
+
+  avengers-service:
+    image: avengers-service
+    environment:
+      - DB_URL=jdbc:postgresql://avengers-db:5432/postgres
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+    ports:
+      - '8080:8080'
+    depends_on:
+      - avengers-db
