@@ -21,6 +21,7 @@ Endpoints:
 4. Run in root directory: 'docker-compose up'
 
 ### Curl commands to test the api (Works well with Git Bash, or please use Postman)
+Note: Added Swagger UI for easy testing. Please visit: http://localhost:8080/swagger-ui/index.html
 1. Create a new superhero:
 ```
  curl -X POST --location 'http://localhost:8080/api/superheroes' \
