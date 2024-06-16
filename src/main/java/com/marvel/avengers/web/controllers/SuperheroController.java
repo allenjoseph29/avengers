@@ -1,5 +1,6 @@
 package com.marvel.avengers.web.controllers;
 
+import com.marvel.avengers.domain.PagedResult;
 import com.marvel.avengers.domain.SuperheroDTO;
 import com.marvel.avengers.domain.SuperheroService;
 import com.marvel.avengers.web.exception.SuperheroNotFound;
@@ -34,5 +35,10 @@ public class SuperheroController {
         return superheroService.getSuperhero(id)
                 .map(ResponseEntity::ok)
                 .orElseThrow(() -> SuperheroNotFound.forId(id));
+    }
+
+    @GetMapping
+    public PagedResult<SuperheroDTO> getAllSuperheroes(@RequestParam(name = "page", defaultValue = "1") int pageNo) {
+        return superheroService.getAllSuperheroes(pageNo);
     }
 }

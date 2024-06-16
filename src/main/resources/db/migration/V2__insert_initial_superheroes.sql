@@ -1,6 +1,13 @@
 INSERT INTO superhero (alias, name, origin) VALUES
 ('Captain Marvel', 'Carol Danvers', 'Exposed to Space Stone reactor overload'),
-('Iron Man', 'Tony Stark', 'Kidnapped in Afghanistan, created the first iron-man suit to escape.');
+('Iron Man', 'Tony Stark', 'Kidnapped in Afghanistan, created the first iron-man suit to escape.'),
+('Thor', 'Thor Odinson', 'Son of Odin from Asgard'),
+('Hulk', 'Bruce Banner', 'Exposed to gamma radiation'),
+('Black Widow', 'Natasha Romanoff', 'Former KGB assassin turned SHIELD agent'),
+('Doctor Strange', 'Stephen Strange', 'A brilliant neurosurgeon turned master of mystic arts after a car accident'),
+('Spider-Man', 'Peter Parker', 'Bitten by a radioactive spider'),
+('Black Panther', 'Challa', 'enhanced by the heart-shaped herb'),
+('Scarlet Witch', 'Wanda Maximoff', 'Mutant with reality-altering powers');
 
 INSERT INTO superhero_powers (superhero_id, powers) VALUES
 ((SELECT id FROM superhero WHERE alias='Captain Marvel'), 'photon-blast'),
@@ -8,12 +15,43 @@ INSERT INTO superhero_powers (superhero_id, powers) VALUES
 ((SELECT id FROM superhero WHERE alias='Captain Marvel'), 'super-strength'),
 ((SELECT id FROM superhero WHERE alias='Captain Marvel'), 'healing'),
 ((SELECT id FROM superhero WHERE alias='Iron Man'), 'genius-intelligence'),
-((SELECT id FROM superhero WHERE alias='Iron Man'), 'wealth');
+((SELECT id FROM superhero WHERE alias='Iron Man'), 'wealth'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'god-strength'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'lightning-manipulation'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'flight'),
+((SELECT id FROM superhero WHERE alias='Hulk'), 'super-strength'),
+((SELECT id FROM superhero WHERE alias='Hulk'), 'invulnerability'),
+((SELECT id FROM superhero WHERE alias='Hulk'), 'regeneration'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'expert-martial-artist'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'master-spy'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'sorcery'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'astral-projection'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'time-manipulation'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'wall-crawling'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'spider-sense'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'super-agility'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'super-strength'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'enhanced-senses'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'master-tactician'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'telekinesis'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'telepathy'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'reality-warping');
 
 INSERT INTO superhero_weapons (superhero_id, weapons) VALUES
 ((SELECT id FROM superhero WHERE alias='Iron Man'), 'arc-reactor'),
 ((SELECT id FROM superhero WHERE alias='Iron Man'), 'iron-man-suit'),
-((SELECT id FROM superhero WHERE alias='Iron Man'), 'iron-legion');
+((SELECT id FROM superhero WHERE alias='Iron Man'), 'iron-legion'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'mjolnir'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'stormbreaker'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'reality-stone'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'widows-bite'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'batons'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'eye-of-agamotto'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'time-stone'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'web-shooters'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'vibranium-suit'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'energy-daggers'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'mind-stone');
 
 INSERT INTO superhero_associations (superhero_id, associations) VALUES
 ((SELECT id FROM superhero WHERE alias='Captain Marvel'), 'space-stone'),
@@ -25,4 +63,25 @@ INSERT INTO superhero_associations (superhero_id, associations) VALUES
 ((SELECT id FROM superhero WHERE alias='Iron Man'), 'avengers'),
 ((SELECT id FROM superhero WHERE alias='Iron Man'), 'jarvis'),
 ((SELECT id FROM superhero WHERE alias='Iron Man'), 'thanos'),
-((SELECT id FROM superhero WHERE alias='Iron Man'), 'pepper-potts');
+((SELECT id FROM superhero WHERE alias='Iron Man'), 'pepper-potts'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'asgard'),
+((SELECT id FROM superhero WHERE alias='Thor'), 'loki'),
+((SELECT id FROM superhero WHERE alias='Hulk'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Hulk'), 'betty-ross'),
+((SELECT id FROM superhero WHERE alias='Hulk'), 'thunderbolt-ross'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'shield'),
+((SELECT id FROM superhero WHERE alias='Black Widow'), 'hawkeye'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'ancient-one'),
+((SELECT id FROM superhero WHERE alias='Doctor Strange'), 'wong'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'aunt-may'),
+((SELECT id FROM superhero WHERE alias='Spider-Man'), 'mary-jane'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'wakanda'),
+((SELECT id FROM superhero WHERE alias='Black Panther'), 'shuri'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'avengers'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'vision'),
+((SELECT id FROM superhero WHERE alias='Scarlet Witch'), 'quicksilver');
