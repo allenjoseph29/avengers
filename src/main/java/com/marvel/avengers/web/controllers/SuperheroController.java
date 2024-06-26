@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -75,5 +76,10 @@ public class SuperheroController {
     @GetMapping
     public PagedResult<SuperheroDTO> getAllSuperheroes(@RequestParam(name = "page", defaultValue = "1") int pageNo) {
         return superheroService.getAllSuperheroes(pageNo);
+    }
+
+    @GetMapping("/association")
+    public List<SuperheroDTO> getAllSuperheroesByAssociation(@RequestParam(name = "association") String association) {
+        return superheroService.getAllSuperheroesByAssociation(association);
     }
 }
